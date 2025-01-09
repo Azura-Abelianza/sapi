@@ -130,7 +130,13 @@
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-
+// Validasi email
+        const emailInput = document.getElementById("email");
+        const email = emailInput.value;
+        if (!email.endsWith("@gmail.com")) {
+          alert("Email harus menggunakan domain @gmail.com.");
+          return;
+        }
     // Validasi jumlah orang
     const jumlahOrang = parseInt(jumlahInput.value, 10);
     if (jumlahOrang <= 0) {
